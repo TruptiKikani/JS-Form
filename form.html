@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form onsubmit="submitHandle(); return false">
+            <h2>Personal Details</h2>
+            <div>
+                <label>Name :</label>
+                <select name="dropdown" id="dropdown">
+                    <option value="Mr.">Mr.</option>
+                    <option value="Mrs.">Mrs.</option>
+                    <option value="Ms.">Ms.</option>
+                </select>
+                <input id="fname" type="fname" name="fname" placeholder="First name">
+                <input id="lname" type="lname" name="lname" placeholder="Last name">
+            </div><br>
+            <div>
+                <label>Mobile No.:</label>
+                <input id="mo_number" name="mno" type="number">
+                <p id="err_mno"></p>
+
+                <label>Work No.:</label>
+                <input id="work_number" name="wno" type="number">
+                <p id="err_wno"></p>
+            </div>
+            <br>
+            <div>
+                <label>City :</label>
+                <input id="city" name="city" type="text">
+                <label>State :</label>
+                <input id="state" name="state" type="text">
+                <label>Country :</label>
+                <input id="country" name="country" type="country">
+            </div><br>
+            <label>Address :</label>
+            <textarea name="address" id="address" cols="50" rows="4" placeholder="Enter your address..."></textarea>
+            <p id="err_addr"></p><br>
+            <label>Zipcode :</label>
+            <input id="zipcode" name="zipcode" type="number">
+            <p id="err_zip"></p>
+            <br><br>
+            <div id="button" onclick="reDirect()">
+                <button id="submit" type="submit">Submit</button>
+            </div>
+
+            <!-- <a id="myAnchor" href="https://www.google.com/">Google</a> -->
+            <!-- <script>
+                console.log(document.getElementById("submit").addEventListener("click", function(event) {
+                    event.preventDefault()
+                }));
+            </script> -->
+        </form>
+    </div>
+
+</body>
+<script src="javascript.js"></script>
+
+</html>

@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(247, 164, 164);
+}
+
+.container {
+    background-color: aliceblue;
+    max-width: 800px;
+    padding: 10px 0px 30px 30px;
+    margin: 126px 0px 0px 297px;
+}
+
+#button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#submit {
+    padding: 10px 25px 10px 25px;
+}

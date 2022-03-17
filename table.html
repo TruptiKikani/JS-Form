@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data page</title>
+    <style>
+        table {
+            border: 1px black solid;
+        }
+        
+        th {
+            border: 1px #dddddd solid;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <button type="button" id="button" onclick="redirect_page()">Add new details</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Mobile No</th>
+                <th>Work No.</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Address</th>
+                <th>ZipCode</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <td>abc</td>
+                <td>4561230789</td>
+                <td>1234567890</td>
+                <td>surat</td>
+                <td>gujarat</td>
+                <td>India</td>
+                <td>qwqewretgthy</td>
+                <td>123456</td>
+            </tr>
+            <tr>
+                <td>xyz</td>
+                <td>4561230789</td>
+                <td>1234567890</td>
+                <td>surat</td>
+                <td>gujarat</td>
+                <td>India</td>
+                <td>dgr7bujyj</td>
+                <td>789456</td>
+            </tr>
+            <tr>
+                <td>efg</td>
+                <td>4561230789</td>
+                <td>1234567890</td>
+                <td>surat</td>
+                <td>gujarat</td>
+                <td>India</td>
+                <td>rcewzaew</td>
+                <td>102030</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</body>
+<script>
+    // document.querySelector("tbody").innerHTML = 
+    // window.localStorage.clear();
+    let details = JSON.parse(sessionStorage.getItem("details"));
+    console.log(details);
+    var tabledata = details.map((table, Index) => (`<tr>
+    <td>${Index}</td>
+    <td>${table.fname}</td>
+    <td>${table.lname}</td>
+    <td>${table.mobileNo}</td>
+    <td>${table.workNo}</td>
+    <td>${table.city}</td>
+    <td>${table.state}</td>
+    <td>${table.country}</td>
+    <td>${table.address}</td>
+    <td>${table.zipNo}</td>
+    `));
+
+    console.log(tabledata);
+    var tbody = document.querySelector('#tbody');
+    tbody.innerHTML = tabledata;
+
+
+    function redirect_page() {
+        window.location.assign("/form.html");
+    }
+</script>
+
+</html>
