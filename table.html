@@ -21,10 +21,12 @@
 <body>
 
     <button type="button" id="button" onclick="window.location.assign('./form.html'); localStorage.removeItem('index')">Add new details</button>
+        <button type="button" id="button" onclick="deleteAll()">Delete</button>
     <br><br>
     <table>
         <thead>
             <tr>
+                <th><input id="selectAll" type="checkbox" onclick="selectAll()"/></th>
                 <th>Index</th>
                 <th>First Name</th>
                 <th>Last Name</th>
