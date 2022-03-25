@@ -20,8 +20,8 @@
 
 <body>
 
-    <button type="button" id="button" onclick="redirect_page()">Add new details</button>
-
+    <button type="button" id="button" onclick="window.location.assign('./form.html'); localStorage.removeItem('index')">Add new details</button>
+    <br><br>
     <table>
         <thead>
             <tr>
@@ -35,70 +35,16 @@
                 <th>Country</th>
                 <th>Address</th>
                 <th>ZipCode</th>
+                <th>Delete Detail</th>
+                <th>Update Detail</th>
             </tr>
         </thead>
         <tbody id="tbody">
-            <tr>
-                <td>abc</td>
-                <td>4561230789</td>
-                <td>1234567890</td>
-                <td>surat</td>
-                <td>gujarat</td>
-                <td>India</td>
-                <td>qwqewretgthy</td>
-                <td>123456</td>
-            </tr>
-            <tr>
-                <td>xyz</td>
-                <td>4561230789</td>
-                <td>1234567890</td>
-                <td>surat</td>
-                <td>gujarat</td>
-                <td>India</td>
-                <td>dgr7bujyj</td>
-                <td>789456</td>
-            </tr>
-            <tr>
-                <td>efg</td>
-                <td>4561230789</td>
-                <td>1234567890</td>
-                <td>surat</td>
-                <td>gujarat</td>
-                <td>India</td>
-                <td>rcewzaew</td>
-                <td>102030</td>
-            </tr>
         </tbody>
 
     </table>
 
 </body>
-<script>
-    // document.querySelector("tbody").innerHTML = 
-    // window.localStorage.clear();
-    let details = JSON.parse(sessionStorage.getItem("details"));
-    console.log(details);
-    var tabledata = details.map((table, Index) => (`<tr>
-    <td>${Index}</td>
-    <td>${table.fname}</td>
-    <td>${table.lname}</td>
-    <td>${table.mobileNo}</td>
-    <td>${table.workNo}</td>
-    <td>${table.city}</td>
-    <td>${table.state}</td>
-    <td>${table.country}</td>
-    <td>${table.address}</td>
-    <td>${table.zipNo}</td>
-    `));
-
-    console.log(tabledata);
-    var tbody = document.querySelector('#tbody');
-    tbody.innerHTML = tabledata;
-
-
-    function redirect_page() {
-        window.location.assign("/form.html");
-    }
-</script>
+<script src="table.js"></script>
 
 </html>

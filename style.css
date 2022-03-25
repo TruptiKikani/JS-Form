@@ -1,12 +1,12 @@
 body {
-    background-color: rgb(247, 164, 164);
+    background-color: rgb(217, 148, 238);
 }
 
 .container {
-    background-color: aliceblue;
+    background-color: rgb(245, 238, 216);
     max-width: 800px;
     padding: 10px 0px 30px 30px;
-    margin: 126px 0px 0px 297px;
+    margin: 10px 0px 0px 297px;
 }
 
 #button {
@@ -16,6 +16,6 @@ body {
     cursor: pointer;
 }
 
-#submit {
+#submitButton {
     padding: 10px 25px 10px 25px;
 }
