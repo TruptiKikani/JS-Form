@@ -1,3 +1,7 @@
+let storeId = [];
+let checkAll = document.getElementById("selectAll");
+const Detail = JSON.parse(localStorage.details);
+
 if (localStorage.getItem("details")) {
   let details = JSON.parse(localStorage.getItem("details"));
   let tabledata = details.map(
@@ -18,7 +22,6 @@ if (localStorage.getItem("details")) {
     <td> <button id="update" type="button" onclick="updateHandle(${Index})">Update</button> </td>
     </tr>`
   );
-  // console.log(tabledata);
   let tbody = document.querySelector("#tbody");
   tbody.innerHTML = tabledata;
 }
@@ -35,43 +38,39 @@ function updateHandle(Index) {
   window.location.assign("./form.html");
 }
 
-let storeId = [];
-
 const check = (Index) => {
   let checkBox = document.getElementById(`select${Index}`);
   if (checkBox.checked == true) {
     !storeId.includes(Index) && storeId.push(Index);
-    console.log(storeId);
   } else if (checkBox.checked == false) {
     let p = storeId.indexOf(Index);
     storeId.splice(p, 1);
+    checkAll.checked = false;
   }
-  // checkAll.checked = false;
+  if (storeId.length === Detail.length) {
+    checkAll.checked = true;
+  }
 };
 
 const deleteAll = () => {
-  storeId.map((id) => deleteHandle(id));
+  if (storeId.length > 0) {
+    let newData = Detail.filter((data, Index) => {
+      return !storeId.includes(Index);
+    });
+    localStorage.setItem("details", JSON.stringify(newData));
+    location.reload();
+  }
 };
 
 const selectAll = () => {
-  let checkAll = document.getElementById("selectAll");
-  // console.log(checkAll.checked);
-  {
-    let sel = JSON.parse(localStorage.details);
-    sel.map((data, Index) => {
-      let checkBox = document.getElementById(`select${Index}`);
-      if (checkAll.checked === true) {
-        !storeId.includes(Index) && storeId.push(Index);
-        console.log(storeId);
-        checkBox.checked = true;
-      } else {
-        checkBox.checked = false;
-        storeId.splice(0, storeId.length);
-      }
-    });
-  }
-  //   let p = storeId.indexOf()
-  // if (checkBox.checked === false) {
-  // checkAll.checked = false;
-  // }
+  Detail.map((data, Index) => {
+    let checkBox = document.getElementById(`select${Index}`);
+    if (checkAll.checked === true) {
+      !storeId.includes(Index) && storeId.push(Index);
+      checkBox.checked = true;
+    } else {
+      checkBox.checked = false;
+      storeId.splice(0, storeId.length);
+    }
+  });
 };
