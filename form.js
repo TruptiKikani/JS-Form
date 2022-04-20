@@ -54,17 +54,7 @@ function submitHandle() {
         ? "<span style='color: red;'>please enter your country"
         : "<span style='color: red;'> ";
   
-    let arr = {
-      firstName,
-      lastName,
-      mobileNo,
-      workNo,
-      city,
-      state,
-      country,
-      address,
-      zipNo,
-    };
+    let arr = {firstName,lastName,mobileNo,workNo,city,state,country,address,zipNo,};
   
     let arr2 = Object.values(arr).filter((data) => data !== "");
     if (arr2.length === 9) {

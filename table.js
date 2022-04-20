@@ -4,6 +4,7 @@ const Detail = JSON.parse(localStorage.details);
 
 if (localStorage.getItem("details")) {
   let details = JSON.parse(localStorage.getItem("details"));
+  console.log(details);
   let tabledata = details.map(
     (table, Index) =>
       `<tr id="tr">
